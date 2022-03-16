@@ -1,0 +1,45 @@
+.header-container {
+  height: 70px;
+  background-color: #090b13;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 36px;
+
+  .header-logo {
+    width: 80px;
+  }
+
+  .header-menu {
+    display: flex;
+    flex: 1;
+    margin-left: 25px;
+    align-items: center;
+
+    .header-menu-link {
+      display: flex;
+      align-items: center;
+      margin: 0 12px;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+      }
+
+      span {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1.42px;
+        padding-left: 4px;
+      }
+    }
+  }
+
+  .header-user-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+}
