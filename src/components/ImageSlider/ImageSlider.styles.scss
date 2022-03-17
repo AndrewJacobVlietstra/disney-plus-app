@@ -1,0 +1,44 @@
+.image-slider-container {
+  margin-top: 20px;
+
+
+  // All slick buttons
+  ul li button {
+    &:before {
+      font-size: 10px;
+      color: #969eab;
+    }
+  }
+
+  // Active slick button
+  .slick-dots .slick-active button::before {
+    color: white;
+  }
+
+  // List of all images to slide through
+  .slick-list {
+    overflow: visible;
+  }
+
+  // To show previous arrow button
+  button {
+    z-index: 1;
+  }
+
+  .image-wrapper {
+    cursor: pointer;
+
+    .image-slider-image {
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-radius: 4px;
+      box-shadow: 0px 26px 30px -10px #000000ab, 0px 16px 10px -10px #000000bd;
+      transition: all .22s;
+
+      &:hover {
+        border: 4px solid #f4f4f4e0;
+      }
+    }
+  }
+}

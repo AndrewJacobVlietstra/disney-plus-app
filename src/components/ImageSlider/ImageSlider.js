@@ -9,18 +9,30 @@ const ImageSlider = () => {
     dots: true,
     infinite: true,
     arrows: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4500,
+    autoplaySpeed: 6000,
   };
 
   return (
     <Slider {...settings} className='image-slider-container'>
-      <h1>Hi</h1>
-      <h1>Yo</h1>
-      <h1>Bye</h1>
+      <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-badag.jpg' />
+      </div>
+
+      <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-badging.jpg' />
+      </div>
+
+      <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-scale.jpg' />
+      </div>
+
+      <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-scales.jpg' />
+      </div>
     </Slider>
   )
 }
