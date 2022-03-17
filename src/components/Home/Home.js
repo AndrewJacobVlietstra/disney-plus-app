@@ -3,9 +3,9 @@ import './Home.styles.scss';
 
 const Home = () => {
   return (
-    <div className='home-container'>
+    <main className='home-container'>
       Home Component
-    </div>
+    </main>
   )
 }
 

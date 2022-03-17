@@ -3,7 +3,7 @@ import './Header.styles.scss';
 
 const Header = () => {
   return (
-    <div className='header-container'>
+    <nav className='header-container'>
       <img className='header-logo' src='/images/logo.svg'  alt='disney-logo' />
       <div className='header-menu'>
         <a className='header-menu-link'>
@@ -32,7 +32,7 @@ const Header = () => {
         </a>
       </div>
       <img className='header-user-image' src='/images/astronaut.png' />
-    </div>
+    </nav>
   )
 }
 
