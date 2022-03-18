@@ -3,3 +3,30 @@
 *::after {
   box-sizing: border-box;
 }
+
+/* Scroll Bar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3E4346;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b1b1b;
+  border: 3px solid #3E4346;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+::selection {
+  background-color: rgb(0, 156, 156);
+  color: white;
+}
