@@ -19,6 +19,14 @@ const ImageSlider = () => {
   return (
     <Slider {...settings} className='image-slider-container'>
       <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-encanto-banner.jpg' />
+      </div>
+
+      <div className='image-wrapper'>
+        <img className='image-slider-image' src='/images/slider-raya-banner.jpg' />
+      </div>
+
+      <div className='image-wrapper'>
         <img className='image-slider-image' src='/images/slider-badag.jpg' />
       </div>
 
