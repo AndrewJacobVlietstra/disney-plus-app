@@ -1,15 +1,16 @@
 import React from 'react';
 import './Header.styles.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <nav className='header-container'>
       <img className='header-logo' src='/images/logo.svg'  alt='disney-logo' />
       <div className='header-menu'>
-        <a className='header-menu-link'>
+        <Link to='/' className='header-menu-link'>
           <img src='/images/home-icon.svg' alt='home-icon'/>
           <span>home</span>
-        </a>
+        </Link>
         <a className='header-menu-link'>
           <img src='/images/search-icon.svg' alt='search-icon'/>
           <span>search</span>

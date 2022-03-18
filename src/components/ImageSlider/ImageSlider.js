@@ -13,7 +13,7 @@ const ImageSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 8000,
   };
 
   return (
@@ -35,7 +35,7 @@ const ImageSlider = () => {
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image' src='/images/slider-badging.jpg' />
+        <img className='image-slider-image burrow' src='/images/slider-badging.jpg' />
       </div>
 
       <div className='image-wrapper'>
@@ -43,7 +43,7 @@ const ImageSlider = () => {
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image' src='/images/slider-scales.jpg' />
+        <img className='image-slider-image wandavision-2' src='/images/slider-scales.jpg' />
       </div>
     </Slider>
   )

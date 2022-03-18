@@ -1,5 +1,5 @@
 .image-slider-container {
-  margin-top: 20px;
+  margin-top: 5px;
 
 
   // All slick buttons
@@ -27,7 +27,7 @@
 
   .image-wrapper {
     width: 1440px;
-    height: 400px;
+    height: 420px;
     cursor: pointer;
 
     .image-slider-image {
@@ -44,6 +44,9 @@
       }
     }
 
+    .raya {
+      object-position: 50% 30%;
+    }
     .encanto {
       object-position: top;
     }
