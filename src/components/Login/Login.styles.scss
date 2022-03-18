@@ -1,0 +1,21 @@
+.login-page-container {
+  position: relative;
+  height: calc(100vh - 70px);
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: url('../../../public/images/login-background.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+
+    z-index: -1;
+  }
+}
