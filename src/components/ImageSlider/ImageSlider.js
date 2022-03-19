@@ -42,9 +42,9 @@ const ImageSlider = () => {
         <img className='image-slider-image wandavision' src='/images/slider-scale.jpg' />
       </div>
 
-      <div className='image-wrapper'>
+      {/* <div className='image-wrapper'>
         <img className='image-slider-image wandavision-2' src='/images/slider-scales.jpg' />
-      </div>
+      </div> */}
     </Slider>
   )
 }

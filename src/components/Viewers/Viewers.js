@@ -40,6 +40,13 @@ const Viewers = () => {
         </video>
       </div>
 
+      <div className='viewer-wrapper star-wrapper'>
+        <img className='viewer-image star' src='/images/viewers-star.png' />
+        <video className='viewer-bg-video' autoPlay loop muted playsInline>
+          <source src='/videos/star.mp4' type='video/mp4' />
+        </video>
+      </div>
+
     </div>
   )
 }

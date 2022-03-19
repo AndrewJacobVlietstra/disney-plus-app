@@ -3,16 +3,16 @@ import './Home.styles.scss';
 import ImageSlider from '../ImageSlider/ImageSlider';
 import Viewers from '../Viewers/Viewers';
 import Movies from '../Movies/Movies';
-import { API_KEY } from '../../app/API'
+import { API_KEY, BASE_URL, MOVIES_BY_POPULARITY, TV_BY_POPULARITY } from '../../app/API'
 
 const Home = () => {
 
-  // useEffect(() => {
-  //   fetch(`https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`)
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //     .catch(err => console.error(err));
-  // }, []);
+  useEffect(() => {
+    fetch(`${BASE_URL}${MOVIES_BY_POPULARITY}${API_KEY}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+  }, []);
 
   return (
     <main className='home-container'>
