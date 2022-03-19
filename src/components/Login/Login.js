@@ -7,7 +7,8 @@ const Login = () => {
       <div className='login-content-cta'>
         <img src='/images/cta-logo-one.svg' className='login-logo-1 login-logo' />
         <div className='sign-up'>
-          <button>get all there</button>
+          <button>Subscribe to Disney+</button>
+          <button className='guest-login-button'>or continue as guest</button>
           <p className='sign-up-description'>
             Get Premier Access to Raya and the Last Dragon for an additional fee with a Disney+ subscription. 
             As of 03/26/21, the price of Disney+ and The Disney Bundle will increase by $1.
