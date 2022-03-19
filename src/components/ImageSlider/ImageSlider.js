@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ImageSlider.styles.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import ImageSliderWrapper from '../ImageSliderWrapper/ImageSliderWrapper';
+import { useSelector } from 'react-redux';
 
 const ImageSlider = () => {
   const settings = {
@@ -16,9 +18,12 @@ const ImageSlider = () => {
     autoplaySpeed: 8000,
   };
 
+  const popularMovies = useSelector(state => state?.movies?.popularMovies?.filter((movie, i) => i <= 7));
+
   return (
     <Slider {...settings} className='image-slider-container'>
-      <div className='image-wrapper'>
+      {popularMovies?.map(movie => <ImageSliderWrapper key={movie.id} movie={movie} />)}
+      {/* <div className='image-wrapper'>
         <img className='image-slider-image encanto' src='images/slider-encanto-banner.jpg' />
       </div>
 
@@ -40,11 +45,8 @@ const ImageSlider = () => {
 
       <div className='image-wrapper'>
         <img className='image-slider-image wandavision' src='images/slider-scale.jpg' />
-      </div>
-
-      {/* <div className='image-wrapper'>
-        <img className='image-slider-image wandavision-2' src='images/slider-scales.jpg' />
       </div> */}
+
     </Slider>
   )
 }

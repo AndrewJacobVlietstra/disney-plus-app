@@ -3,7 +3,7 @@ import './Header.styles.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logUserIn, logUserOut } from '../../redux/User/User';
+import { logUserIn, logUserOut } from '../../redux/User/UserReducer';
 
 const Header = () => {
   const navigate = useNavigate(); // navigate between pages
