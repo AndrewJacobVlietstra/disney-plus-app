@@ -19,31 +19,31 @@ const ImageSlider = () => {
   return (
     <Slider {...settings} className='image-slider-container'>
       <div className='image-wrapper'>
-        <img className='image-slider-image encanto' src='/images/slider-encanto-banner.jpg' />
+        <img className='image-slider-image encanto' src='images/slider-encanto-banner.jpg' />
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image raya' src='/images/slider-raya-banner.jpg' />
+        <img className='image-slider-image raya' src='images/slider-raya-banner.jpg' />
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image onward' src='/images/slider-badag.jpg' />
+        <img className='image-slider-image onward' src='images/slider-badag.jpg' />
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image luca' src='/images/slider-luca-banner.jpeg' />
+        <img className='image-slider-image luca' src='images/slider-luca-banner.jpeg' />
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image burrow' src='/images/slider-badging.jpg' />
+        <img className='image-slider-image burrow' src='images/slider-badging.jpg' />
       </div>
 
       <div className='image-wrapper'>
-        <img className='image-slider-image wandavision' src='/images/slider-scale.jpg' />
+        <img className='image-slider-image wandavision' src='images/slider-scale.jpg' />
       </div>
 
       {/* <div className='image-wrapper'>
-        <img className='image-slider-image wandavision-2' src='/images/slider-scales.jpg' />
+        <img className='image-slider-image wandavision-2' src='images/slider-scales.jpg' />
       </div> */}
     </Slider>
   )

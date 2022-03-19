@@ -2,6 +2,7 @@
   "name": "disney-plus-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://andrewjacobvlietstra.github.io/disney-plus-app",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^4.2.4",

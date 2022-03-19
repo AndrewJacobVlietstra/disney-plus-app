@@ -7,10 +7,11 @@ import { logUserIn } from '../../redux/User/User';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
   return (
     <div className='login-page-container'>
       <div className='login-content-cta'>
-        <img src='/images/cta-logo-one.svg' className='login-logo-1 login-logo' />
+        <img src='images/cta-logo-one.svg' className='login-logo-1 login-logo' /> 
         <div className='sign-up'>
           <button>Subscribe to Disney+</button>
           <button className='guest-login-button' onClick={() => {dispatch(logUserIn()); return navigate('/home')}}>or continue as guest</button>
@@ -19,7 +20,7 @@ const Login = () => {
             As of 03/26/21, the price of Disney+ and The Disney Bundle will increase by $1.
           </p>
         </div>
-        <img src='/images/cta-logo-two.png' className='login-logo-2 login-logo' />
+        <img src='images/cta-logo-two.png' className='login-logo-2 login-logo' />
       </div>
     </div>
   )

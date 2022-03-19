@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename='/disney-plus-app'>
         <Header />
         <Routes>
           <Route path='/' element={<Login />} />

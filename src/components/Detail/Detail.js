@@ -16,12 +16,12 @@ const Detail = () => {
       <div className='controls-container'>
 
         <button className='play-button controls-button'>
-          <img src='/images/play-icon-black.png' />
+          <img src='images/play-icon-black.png' />
           <span>Play</span>
         </button>
 
         <button className='trailer-button controls-button'>
-          <img src='/images/play-icon-white.png' />
+          <img src='images/play-icon-white.png' />
           <span>Trailer</span>
         </button>
 
@@ -30,7 +30,7 @@ const Detail = () => {
         </button>
 
         <button className='group-watch-button controls-button'>
-          <img src='/images/group-icon.png' />
+          <img src='images/group-icon.png' />
         </button>
 
       </div>
