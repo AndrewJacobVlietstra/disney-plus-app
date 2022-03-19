@@ -48,9 +48,13 @@ const Header = () => {
         <button className="login-button" onClick={() => {dispatch(logUserIn()); return navigate('/home');}}>Login</button>
       )}
 
-      {toggleLogout ? (<div className='logout-modal'>
+      {toggleLogout ? (
+      <div className='logout-modal'>
+        <h4>{user.userName}</h4>
+        <button className='modal-button'>Settings</button>
         <button className='modal-button' onClick={() => {dispatch(logUserOut()); navigate('/'); return setToggleLogout(!toggleLogout)}}>Log Out</button>
-      </div>) : null}
+      </div>
+      ) : null}
     </nav>
   )
 }
