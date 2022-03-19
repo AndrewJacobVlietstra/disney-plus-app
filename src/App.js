@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -7,7 +7,6 @@ import Detail from './components/Detail/Detail';
 import Login from './components/Login/Login';
 
 function App() {
-  const [user, setUser] = useState({userName: '', loggedIn: null});
 
   return (
     <div className="App">

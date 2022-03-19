@@ -66,4 +66,59 @@
     border: 1px solid white;
     cursor: pointer;
   }
+
+  .login-button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 3px;
+    border: 1px solid #f4f4f4;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: #f4f4f4;
+    transition: all .25s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #026efc;
+    }
+  }
+
+  .logout-modal {
+    position: absolute;
+    top: 4rem;
+    right: .4rem;
+    width: 150px;
+    height: 200px;
+    background-color: #090b13;
+    border: 1px solid #f4f4f4;
+    border-radius: 4px;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-button {
+      padding: 8px 20px;
+      border: none;
+      border: 1px solid #61DAFB;
+      background-color: transparent;
+      color: #f4f4f4;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: all .25s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #61DAFB;
+        color: #111;
+      }
+    }
+  }
+}
+
+.justify-space-between {
+  justify-content: space-between;
 }
