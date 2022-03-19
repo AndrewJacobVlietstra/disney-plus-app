@@ -1,0 +1,32 @@
+.image-wrapper {
+  position: relative;
+
+  .image-wrapper-info {
+    position: absolute;
+    bottom: 1rem;
+    left: -100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: #22222280;
+    backdrop-filter: blur(4px);
+    width: 400px;
+    padding: 20px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    z-index: 0;
+    pointer-events: none;
+
+
+    .image-wrapper-title {
+      margin-top: 0;
+    }
+  }
+
+  &:hover .image-wrapper-info {
+    opacity: 1;
+    visibility: visible;
+    left: 2rem;
+  }
+}
