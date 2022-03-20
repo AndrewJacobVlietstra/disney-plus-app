@@ -20,26 +20,26 @@ const Header = () => {
           <img src='images/home-icon.svg' alt='home-icon'/>
           <span>home</span>
         </Link>
-        <a className='header-menu-link'>
+        <Link to='/search' className='header-menu-link'>
           <img src='images/search-icon.svg' alt='search-icon'/>
           <span>search</span>
-        </a>
-        <a className='header-menu-link'>
+        </Link>
+        <Link to='/watchlist' className='header-menu-link'>
           <img src='images/watchlist-icon.svg' alt='watchlist-icon'/>
           <span>watchlist</span>
-        </a>
-        <a className='header-menu-link'>
+        </Link>
+        <Link to='/originals' className='header-menu-link'>
           <img src='images/original-icon.svg' alt='originals-icon'/>
           <span>originals</span>
-        </a>
-        <a className='header-menu-link'>
+        </Link>
+        <Link to='/movies' className='header-menu-link'>
           <img src='images/movie-icon.svg' alt='movie-icon'/>
           <span>movies</span>
-        </a>
-        <a className='header-menu-link'>
+        </Link>
+        <Link to='/series' className='header-menu-link'>
           <img src='images/series-icon.svg' alt='series-icon'/>
           <span>series</span>
-        </a>
+        </Link>
       </div>) : null}
       
       {user.loggedIn ? (
@@ -51,7 +51,7 @@ const Header = () => {
       {toggleLogout ? (
       <div className='logout-modal'>
         <h4>{user.userName}</h4>
-        <button className='modal-button'>Settings</button>
+        <button className='modal-button' onClick={() => navigate('/settings')}>Settings</button>
         <button className='modal-button' onClick={() => {dispatch(logUserOut()); navigate('/'); return setToggleLogout(!toggleLogout)}}>Log Out</button>
       </div>
       ) : null}

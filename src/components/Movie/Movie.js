@@ -5,7 +5,7 @@ import { BASE_IMAGE_URL, API_KEY } from "../../API/API";
 import { displayMovieData, displayMovieImages } from "../../redux/Movies/MoviesReducer";
 import { useNavigate } from 'react-router-dom';
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, backdrop }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -25,10 +25,10 @@ const Movie = ({ movie }) => {
       navigate(`/detail:${movie.id}`);
       return movieClickHandler();
     }}>
-      <img className="movie-image" src={`${BASE_IMAGE_URL}${movie.backdrop_path}`} />
+      <img className="movie-image" src={`${BASE_IMAGE_URL}${backdrop ? movie?.backdrop_path : movie?.poster_path}`} />
       <div className="movie-info-container">
-        <h4 className="movie-title">{movie.original_title}</h4>
-        <p className="movie-overview">{movie.overview.length > 280 ? `${movie.overview.substring(0, 280)}...` : movie.overview}</p>
+        <h4 className="movie-title">{movie?.original_title}</h4>
+        <p className="movie-overview">{movie?.overview.length > 280 ? `${movie?.overview?.substring(0, 280)}...` : movie.overview}</p>
       </div>
     </div>
   );

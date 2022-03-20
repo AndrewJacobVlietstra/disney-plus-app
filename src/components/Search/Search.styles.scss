@@ -1,0 +1,49 @@
+.search-page-container {
+  min-height: calc(100vh - 70px); // 70px is height of the header
+  margin-bottom: 2rem;
+
+  &:before {
+    content: "";
+
+    background: url("../../../public/images/home-background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .search-form {
+    .search-input {
+      background: linear-gradient(180deg, #4b4b4b80 0%, #83838380 100%);
+      width: 100%;
+      height: 80px;
+      padding: 0 30px;
+      font-size: 40px;
+      color: #f4f4f4;
+      border: none;
+
+      &::placeholder {
+        color: #f4f4f4;
+        letter-spacing: 1px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .search-results-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 15px;
+  }
+}

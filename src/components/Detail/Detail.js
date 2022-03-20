@@ -5,11 +5,12 @@ import { BASE_IMAGE_URL_WIDE, API_KEY } from '../../API/API';
 import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
-  
   const navigate = useNavigate();
   const [movieTrailers, setMovieTrailers] = useState([]);
   const movieState = useSelector(state => state?.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
+  let tvOrMovie = movieData?.number_of_episodes ? 'tv' : 'movie'
+  // console.log(movieData, movieImages);
 
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
@@ -29,9 +30,9 @@ const Detail = () => {
     genresArray.push(genre?.name);
   });
 
-  // Fetch trailers for specific movie
+  // Fetch trailers for specific movie or tv show
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${movieData?.id}/videos?${API_KEY}language=en-US`)
+    fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)
       .then(res => res.json())
       .then(data => setMovieTrailers(data?.results?.reverse()))
       .catch(err => console.error(err));
@@ -81,7 +82,7 @@ const Detail = () => {
 
         <div className='details-subtitle-container'>
           <h4 className='details-subtitle'>
-            {movieData?.release_date.split('-')[0]} • {convertedMovieRunTime(movieData?.runtime)} • {genresArray?.join(', ')}
+            {tvOrMovie === 'tv' ? `${movieData?.first_air_date?.split('-')[0]} - ${movieData?.last_air_date?.split('-')[0]}` : movieData?.release_date?.split('-')[0]} • {tvOrMovie === 'tv' ? `${movieData?.number_of_seasons} ${movieData?.number_of_seasons > 1 ? 'Seasons' : 'Season'}` : convertedMovieRunTime(movieData?.runtime)} • {genresArray?.join(', ')}
           </h4>
         </div>
 

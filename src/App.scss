@@ -27,7 +27,11 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: white;
+  background: #bbbbbb;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #f4f4f4;
 }
 
 ::selection {
