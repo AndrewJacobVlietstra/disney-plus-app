@@ -19,7 +19,7 @@
       object-position: center;
       opacity: 0;
       transform: scale(2);
-      animation: fade 4s ease .25s 1 forwards;
+      animation: fade 4s ease .2s 1 forwards;
     }
 
   }
@@ -30,9 +30,9 @@
     
 
     .details-image-title-container {
-      width: 250px;
+      width: 350px;
       min-width: 200px;
-      margin: 60px 0;
+      margin: 30px 0;
       margin-bottom: 30px;
   
       .details-image-title {

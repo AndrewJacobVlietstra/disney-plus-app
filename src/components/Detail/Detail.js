@@ -9,28 +9,28 @@ const Detail = () => {
   const [movieTrailers, setMovieTrailers] = useState([]);
   const movieState = useSelector(state => state?.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
-  let tvOrMovie = movieData?.number_of_episodes ? 'tv' : 'movie'
   // console.log(movieData, movieImages);
-
+  
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
   let logoPath = `${BASE_IMAGE_URL_WIDE + firstEnglishLogo?.file_path}`;
   if (firstEnglishLogo === undefined) logoPath = 'images/disney-plus-logo.png';
-
+  
   // Calculate movie runtime
   const convertedMovieRunTime = (inputTime) => {
     let hours = Math.floor(inputTime / 60);
     let minutes = inputTime % 60;
     return `${hours}h ${minutes}m`;
   };
-
+  
   // Generate array of genres to join with commas
   let genresArray = [];
   movieData?.genres?.forEach(genre => {
     genresArray.push(genre?.name);
   });
-
+  
   // Fetch trailers for specific movie or tv show
+  let tvOrMovie = movieData?.number_of_episodes ? 'tv' : 'movie';
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)
       .then(res => res.json())
