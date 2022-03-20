@@ -39,7 +39,6 @@ const Detail = () => {
 
   return (
     <div className='details-container'>
-      <img className='details-loader' src='images/disney-plus-loader.gif' />
 
       <div className='details-background-container'>
         <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}`} />
