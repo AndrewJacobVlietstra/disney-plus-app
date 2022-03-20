@@ -10,25 +10,27 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     top: 100%;
     left: 0;
     padding: 0 10px;
     line-height: 1.5;
     height: 100%;
-    font-size: 100%;
     opacity: 0;
-    transition: all .5s ease;
+    transition: all .25s ease;
 
     .movie-title {
       font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 0;
+      font-size: 1vw;
+      margin: 0;
+      letter-spacing: 1.4px;
     }
 
     .movie-overview {
-      font-size: 14px;
+      font-size: .75vw;
+      letter-spacing: .5px;
+      line-height: 1.5;
     }
   }
 

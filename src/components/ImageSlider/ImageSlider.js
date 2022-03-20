@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 const ImageSlider = () => {
   const settings = {
     dots: true,
+    draggable: false,
     infinite: true,
     arrows: true,
     speed: 600,
@@ -23,6 +24,7 @@ const ImageSlider = () => {
   return (
     <Slider {...settings} className='image-slider-container'>
       {popularMovies?.map(movie => <ImageSliderWrapper key={movie.id} movie={movie} />)}
+      
       {/* <div className='image-wrapper'>
         <img className='image-slider-image encanto' src='images/slider-encanto-banner.jpg' />
       </div>

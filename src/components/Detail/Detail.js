@@ -1,52 +1,81 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Detail.styles.scss';
+import { useSelector } from 'react-redux';
+import { BASE_IMAGE_URL_WIDE } from '../../API/API';
+import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
+  const navigate = useNavigate();
+  const movieState = useSelector(state => state?.movies);
+  const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
+
+  console.log(movieData, movieImages);
+
+  // Grab the first English logo
+  const firstEnglishLogo = movieImages?.logos?.find(logo => logo.iso_639_1 === 'en');
+
+  // Calculate movie runtime
+  const convertedMovieRunTime = (inputTime) => {
+    let hours = Math.floor(inputTime / 60);
+    let minutes = inputTime % 60;
+    return `${hours}h ${minutes}m`;
+  };
+
+  // Generate array of genres to join with commas
+  let genresArray = [];
+  movieData?.genres?.forEach(genre => {
+    genresArray.push(genre.name);
+  });
+
+
   return (
     <div className='details-container'>
 
       <div className='details-background-container'>
-        <img className='details-background-image' src='https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4F39B7E16726ECF419DD7C49E011DD95099AA20A962B0B10AA1881A70661CE45/scale?width=1440&aspectRatio=1.78&format=jpeg' />
+        <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}`} />
       </div>
 
-      <div className='details-image-title-container'>
-        <img className='details-image-title' src='https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78' />
-      </div>
 
-      <div className='controls-container'>
+      <div className='details-content'>
+        <div className='details-image-title-container'>
+          <img className='details-image-title' src={`${BASE_IMAGE_URL_WIDE}${firstEnglishLogo?.file_path}`} />
+          <span className='go-back-button' onClick={() => window.history.back()}>{`❮ Go Back`}</span>
+        </div>
 
-        <button className='play-button controls-button'>
-          <img src='images/play-icon-black.png' />
-          <span>Play</span>
-        </button>
 
-        <button className='trailer-button controls-button'>
-          <img src='images/play-icon-white.png' />
-          <span>Trailer</span>
-        </button>
+        <div className='controls-container'>
 
-        <button className='add-button controls-button'>
-          <span>+</span>
-        </button>
+          <button className='play-button controls-button'>
+            <img src='images/play-icon-black.png' />
+            <span>Play</span>
+          </button>
 
-        <button className='group-watch-button controls-button'>
-          <img src='images/group-icon.png' />
-        </button>
+          <button className='trailer-button controls-button'>
+            <img src='images/play-icon-white.png' />
+            <span>Trailer</span>
+          </button>
 
-      </div>
+          <button className='add-button controls-button'>
+            <span>+</span>
+          </button>
 
-      <div className='details-subtitle-container'>
-        <h4 className='details-subtitle'>
-          2018 • 7m • Family, Fantasy, Kids, Animation
-        </h4>
-      </div>
+          <button className='group-watch-button controls-button'>
+            <img src='images/group-icon.png' />
+          </button>
 
-      <div className='details-description-container'>
-        <p className='details-description'>
-          A chinese mom who's sad when her grown son leaves home get another
-          chance at motherhood when one of her dumplings springs to life.
-          But she finds that nothing stays cute and small forever.
-        </p>
+        </div>
+
+        <div className='details-subtitle-container'>
+          <h4 className='details-subtitle'>
+            {movieData?.release_date.split('-')[0]} • {convertedMovieRunTime(movieData?.runtime)} • {genresArray.join(', ')}
+          </h4>
+        </div>
+
+        <div className='details-description-container'>
+          <p className='details-description'>
+            {movieData?.overview}
+          </p>
+        </div>
       </div>
 
     </div>

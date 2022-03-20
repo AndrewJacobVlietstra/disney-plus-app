@@ -20,21 +20,21 @@ const Movies = () => {
   return (
     <div className='movies-container'>
 
-      <h4>Recommended for You</h4>
+      <h3>Recommended for You</h3>
       <div className='movies-content'>
         {popularMoviesSelector
           ?.filter((movie, index) => 8 <= index && index <= 11)
           ?.map((movie) => <Movie key={movie.id} movie={movie} />)}
       </div>
 
-      <h4>Popular</h4>
+      <h3>Popular</h3>
       <div className='movies-content'>
         {popularMoviesSelector
           ?.filter((movie, index) => 11 < index && index <= 15)
           ?.map((movie) => <Movie key={movie.id} movie={movie} />)}
       </div>
 
-      <h4>Trending</h4>
+      <h3>Trending</h3>
       <div className='movies-content'>
         {popularMoviesSelector
           ?.filter((movie, index) => 15 < index && index <= 20)

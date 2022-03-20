@@ -7,9 +7,15 @@ export const moviesSlice = createSlice({
     popularMovies: (state, action) => {
       return {...state, popularMovies: action.payload};
     },
+    displayMovieData: (state, action) => {
+      return {...state, displayMovieData: action.payload}
+    },
+    displayMovieImages: (state, action) => {
+      return {...state, displayMovieImages: action.payload}
+    },
   }
 });
 
-export const { popularMovies } = moviesSlice.actions;
+export const { popularMovies, displayMovieData, displayMovieImages } = moviesSlice.actions;
 export default moviesSlice.reducer;
 

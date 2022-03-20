@@ -58,3 +58,12 @@
 
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .image-slider-container {
+    
+    .image-wrapper {
+      height: 640px;
+    }
+  }
+}

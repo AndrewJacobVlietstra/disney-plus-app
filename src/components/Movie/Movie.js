@@ -1,14 +1,34 @@
 import React from "react";
 import './Movie.styles.scss';
-import { BASE_IMAGE_URL } from "../../API/API";
+import { useDispatch } from "react-redux";
+import { BASE_IMAGE_URL, API_KEY } from "../../API/API";
+import { displayMovieData, displayMovieImages } from "../../redux/Movies/MoviesReducer";
+import { useNavigate } from 'react-router-dom';
 
 const Movie = ({ movie }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const movieClickHandler = () => {
+    fetch(`https://api.themoviedb.org/3/movie/${movie.id}?${API_KEY}`)
+      .then(res => res.json())
+      .then(data => dispatch(displayMovieData(data)))
+      .catch(err => console.error(err));
+    fetch(`https://api.themoviedb.org/3/movie/${movie.id}/images?${API_KEY}`)
+      .then(res => res.json())
+      .then(data => dispatch(displayMovieImages(data)))
+      .catch(err => console.error(err));
+  };
+
   return (
-    <div className="movie-wrapper">
-      <img className="movie-image" src={`${BASE_IMAGE_URL}${movie.backdrop_path}`} title={movie.original_title} />
+    <div className="movie-wrapper" onClick={() => {
+      navigate(`/detail:${movie.id}`);
+      return movieClickHandler();
+    }}>
+      <img className="movie-image" src={`${BASE_IMAGE_URL}${movie.backdrop_path}`} />
       <div className="movie-info-container">
         <h4 className="movie-title">{movie.original_title}</h4>
-        <p className="movie-overview">{movie.overview.length > 300 ? `${movie.overview.substring(0, 300)}...` : movie.overview}</p>
+        <p className="movie-overview">{movie.overview.length > 280 ? `${movie.overview.substring(0, 280)}...` : movie.overview}</p>
       </div>
     </div>
   );
