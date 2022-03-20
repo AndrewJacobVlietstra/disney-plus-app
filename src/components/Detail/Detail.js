@@ -31,8 +31,12 @@ const Detail = () => {
   return (
     <div className='details-container'>
 
-      <div className='details-background-container'>
-        <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}`} />
+      <div className='details-background-container-1'>
+        <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops[0]?.file_path}`} />
+      </div>
+
+      <div className='details-background-container-2'>
+        <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops[1]?.file_path}`} />
       </div>
 
 
