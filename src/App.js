@@ -5,10 +5,10 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Search from './components/Search/Search';
 import Detail from './components/Detail/Detail';
+import Showcase from './components/Showcase/Showcase';
 import Login from './components/Login/Login';
 
 function App() {
-
   return (
     <div className="App">
       <Router basename='/disney-plus-app'>
@@ -18,6 +18,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/search' element={<Search />} />
           <Route path='/detail:id' element={<Detail />} />
+          <Route path='/showcase' element={<Showcase />} />
         </Routes>
       </Router>
     </div>

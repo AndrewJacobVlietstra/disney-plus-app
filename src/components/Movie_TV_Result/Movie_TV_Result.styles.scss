@@ -14,7 +14,7 @@
   }
 
   &:hover .movie-image {
-    opacity: .25;
+    filter: brightness(.35);
   }
 
   .movie-image {

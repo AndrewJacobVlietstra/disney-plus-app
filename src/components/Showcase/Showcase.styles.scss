@@ -1,0 +1,20 @@
+.showcase-page-container {
+  position: relative;
+  height: calc(100vh - 70px);
+  padding: 0 30px;
+
+  .showcase-bg {
+    position: fixed;
+    top: -4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .showcase-movies {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 60vh;
+  }
+}

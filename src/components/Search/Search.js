@@ -11,6 +11,7 @@ const Search = () => {
   // Query for fetching movie or TV show data
   let query = `https://api.themoviedb.org/3/search/multi?${API_KEY}language=en-US&query=${search}&page=1&include_adult=false`;
 
+  // Handle fetching data based on search
   const handleSubmit = async (e) => {
     e.preventDefault();
 
