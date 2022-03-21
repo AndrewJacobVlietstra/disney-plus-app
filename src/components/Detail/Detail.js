@@ -38,7 +38,7 @@ const Detail = () => {
       .then(res => res.json())
       .then(data => setMovieTrailers(data?.results?.reverse()))
       .catch(err => console.error(err));
-  }, [movieData?.id])
+  }, [movieData?.id]);
 
 
   return (
@@ -98,12 +98,15 @@ const Detail = () => {
           </p>
         </div>
 
-        <h4 className='trailers-title'>Trailers</h4>
-        <hr />
+
         <div className='trailers-container'>
-          {movieTrailers
-            ?.filter((el, i) => i <= 5)
-            ?.map(trailer => <iframe key={trailer?.id} src={`https://www.youtube.com/embed/${trailer?.key}`} allow="fullscreen;"></iframe>)}
+          <h4 className='trailers-title'>Trailers</h4>
+          <hr />
+          <div className='trailers-content'>
+            {movieTrailers
+              ?.filter((el, i) => i <= 5)
+              ?.map(trailer => <iframe key={trailer?.id} src={`https://www.youtube.com/embed/${trailer?.key}`} allow="fullscreen;"></iframe>)}
+          </div>
         </div>
 
       </div>
