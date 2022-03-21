@@ -10,7 +10,7 @@ const Detail = () => {
   const [keywords, setKeywords] = useState([]);
   const movieState = useSelector(state => state?.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
-  console.log(movieData, movieImages);
+  // console.log(movieData, movieImages);
   
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
@@ -38,14 +38,9 @@ const Detail = () => {
       .then(res => res.json())
       .then(data => setMovieTrailers(data?.results?.reverse()))
       .catch(err => console.error(err));
-
-    fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/keywords?${API_KEY}language=en-US`)
-      .then(res => res.json())
-      .then(data => setKeywords(data))
-      .catch(err => console.error(err));
   }, [movieData?.id])
 
-  console.log(keywords)
+
   return (
     <div className='details-container'>
 
