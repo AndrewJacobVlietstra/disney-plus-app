@@ -32,8 +32,9 @@ const Search = () => {
   // Store search results in local storage, allowing search to persist when coming back to search page
   useEffect(() => {
     searchInput.current.focus();
-    const searchResults = JSON.parse(localStorage.getItem('searchResults'));
-    if (searchResults) setResults(searchResults);
+    const searchResults = localStorage.getItem('searchResults');
+    if (searchResults === null || searchResults === undefined || searchResults === '') {return;}
+    if (searchResults) {setResults(JSON.parse(searchResults));}
   }, []);
   
 
@@ -42,6 +43,11 @@ const Search = () => {
     <div className='search-page-container'>
       <form onSubmit={handleSubmit} className='search-form'>
         <input ref={searchInput} className='search-input' id='search' value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for Movies, or TV Shows' />
+        <img className='clear-search-button' src='images/clear-search.png' onClick={() => {
+          setResults([]);
+          searchInput.current.focus();
+          return localStorage.setItem('searchResults', '');
+        }} />
       </form>
 
       <div className='search-results-container'>

@@ -19,6 +19,8 @@
     z-index: -1;
   }
   .search-form {
+    position: relative;
+
     .search-input {
       background: linear-gradient(180deg, rgba(75, 75, 75, 0.2) 0%, rgba(131, 131, 131, 0.2) 100%);
       width: 100%;
@@ -35,6 +37,20 @@
 
       &:focus {
         outline: none;
+      }
+    }
+
+    .clear-search-button {
+      position: absolute;
+      top: 1.4rem;
+      right: 1rem;
+      width: 40px;
+      filter: brightness(3);
+      cursor: pointer;
+      transition: all .24s ease;
+
+      &:hover {
+        filter: brightness(2.2);
       }
     }
   }

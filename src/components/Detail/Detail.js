@@ -32,6 +32,7 @@ const Detail = () => {
   // Fetch trailers for specific movie or tv show
   let tvOrMovie = movieData?.number_of_episodes ? 'tv' : 'movie';
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)
       .then(res => res.json())
       .then(data => setMovieTrailers(data?.results?.reverse()))
