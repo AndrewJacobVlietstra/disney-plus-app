@@ -55,3 +55,18 @@
   }
 
 }
+
+@media only screen and (max-width: 1366px) {
+  .movie_tv-wrapper {
+
+    .movie-info-container {
+
+      .movie-title {
+        font-size: 1.25vw;
+      }
+      .movie-overview {
+        font-size: .9vw;
+      }
+    }
+  }
+}

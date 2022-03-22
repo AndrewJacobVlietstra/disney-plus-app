@@ -33,7 +33,6 @@
       width: 320px;
       min-width: 200px;
       margin: 30px 0;
-      margin-bottom: 30px;
   
       .details-image-title {
         width: 100%;
@@ -134,7 +133,7 @@
     }
   
     .details-description-container {
-  
+
   
       .details-tagline {
         color: rgb(175, 175, 175);
@@ -181,5 +180,28 @@
   100% {
     opacity: 0.3;
     transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .details-container {
+
+    .details-content {
+
+      .details-image-title-container {
+
+        .details-image-title {
+          width: 270px;
+        }
+      }
+
+      .details-description-container {
+
+        .details-description {
+          font-size: 1.1vw;
+          max-width: 520px;
+        }
+      }
+    }
   }
 }
