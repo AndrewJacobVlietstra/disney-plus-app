@@ -154,7 +154,6 @@
     .trailers-container {
       margin-top: 12vh;
 
-      // .trailers-title {margin-top: 10vh;}
       .trailers-content {
         margin: 1.5rem 0;
         margin-bottom: 3rem;
@@ -200,6 +199,23 @@
         .details-description {
           font-size: 1.1vw;
           max-width: 520px;
+        }
+      }
+
+      .trailers-container {
+        margin-top: 12vh;
+  
+
+        .trailers-content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-gap: 1.5rem;
+  
+          iframe {
+            display: block;
+            border: none;
+            width: 40vw;
+            height: 40vh;
+          }
         }
       }
     }

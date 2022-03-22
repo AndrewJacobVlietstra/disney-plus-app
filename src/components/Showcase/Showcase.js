@@ -17,7 +17,7 @@ const Showcase = () => {
   if (currentShowcase === 'marvel') {companyID = '420'; imageSrc = 'images/viewers-marvel.png'; videoSrc = 'videos/marvel-intro.mp4';}
   if (currentShowcase === 'star-wars') {companyID = '1'; imageSrc = 'images/viewers-starwars.png'; videoSrc = 'videos/star-wars-intro.mp4'; genres = '&with_genres=878'}
   if (currentShowcase === 'national-geographic') {companyID = '7521'; imageSrc = 'images/viewers-national.png'; videoSrc = 'videos/national-intro.mp4';}
-  if (currentShowcase === 'star') {companyID = '1556'; imageSrc = 'images/viewers-star.png'; videoSrc = 'videos/fox-intro.mp4';}
+  if (currentShowcase === 'star') {companyID = '25'; imageSrc = 'images/viewers-star.png'; videoSrc = 'videos/fox-intro.mp4';}
   
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/discover/movie?${API_KEY}language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_companies=${companyID}${genres}`)

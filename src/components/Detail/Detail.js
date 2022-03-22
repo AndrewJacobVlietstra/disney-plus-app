@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Detail.styles.scss';
 import { useSelector } from 'react-redux';
 import { BASE_IMAGE_URL_WIDE, API_KEY } from '../../API/API';
 import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
+  const trailersRef = useRef(null);
   const navigate = useNavigate();
   const [movieTrailers, setMovieTrailers] = useState([]);
   const [keywords, setKeywords] = useState([]);
@@ -62,13 +63,7 @@ const Detail = () => {
             <span>Play</span>
           </button>
 
-          <button className='trailer-button controls-button' onClick={() =>
-              window.scroll({
-                top: document.body.offsetHeight,
-                left: 0,
-                behavior: "smooth",
-              })
-            }>
+          <button className='trailer-button controls-button' onClick={() => trailersRef.current.scrollIntoView()}>
             <img src='images/play-icon-white.png' />
             <span>Trailer</span>
           </button>
@@ -99,7 +94,7 @@ const Detail = () => {
         </div>
 
 
-        <div className='trailers-container'>
+        <div className='trailers-container' ref={trailersRef}>
           <h4 className='trailers-title'>Trailers</h4>
           <hr />
           <div className='trailers-content'>
