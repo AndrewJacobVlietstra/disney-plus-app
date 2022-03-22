@@ -2,7 +2,7 @@
   position: relative;
   height: calc(100vh - 70px);
   display: flex;
-  align-items: top;
+  align-items: center;
   justify-content: center;
 
   &::before {
@@ -26,7 +26,7 @@
   .login-content-cta {
     max-width: 650px;
     padding: 80px 20px;
-    margin-top: 120px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,6 +77,16 @@
         text-align: center;
         margin-bottom: 20px;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .login-page-container {
+
+    .login-content-cta {
+      margin-bottom: 180px;
+      transform: scale(1.1);
     }
   }
 }
