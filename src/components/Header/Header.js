@@ -43,7 +43,9 @@ const Header = () => {
       </div>) : null}
       
       {user.loggedIn ? (
-        <img className="header-user-image" src="images/astronaut.png" onClick={() => setToggleLogout(!toggleLogout)} />
+        <div className='header-user-image-container' onClick={() => setToggleLogout(!toggleLogout)}>
+          <img className="header-user-image" src={user.userImage} />
+        </div>
       ) : (
         <button className="login-button" onClick={() => {dispatch(logUserIn()); return navigate('/home');}}>Login</button>
       )}
@@ -51,7 +53,7 @@ const Header = () => {
       {toggleLogout ? (
       <div className='logout-modal'>
         <h4>{user.userName}</h4>
-        <button className='modal-button' onClick={() => navigate('/settings')}>Settings</button>
+        <button className='modal-button' onClick={() => {navigate('/settings'); return setToggleLogout(!toggleLogout)}}>Settings</button>
         <button className='modal-button' onClick={() => {dispatch(logUserOut()); navigate('/'); return setToggleLogout(!toggleLogout)}}>Log Out</button>
       </div>
       ) : null}
