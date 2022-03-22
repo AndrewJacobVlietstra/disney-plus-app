@@ -41,7 +41,7 @@ const Settings = () => {
         <div className='user-settings'>
           <form onSubmit={handleUserNameChange}>
             <label className='settings-label' htmlFor='username-input'>Change Username</label> <br />
-            <input id='username-input' className='username-input' value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="off" />
+            <input id='username-input' className='username-input' value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="off" placeholder='Type here' />
           </form>
         </div>
 

@@ -100,7 +100,7 @@ const Detail = () => {
           <div className='trailers-content'>
             {movieTrailers
               ?.filter((el, i) => i <= 5)
-              ?.map(trailer => <iframe key={trailer?.id} src={`https://www.youtube.com/embed/${trailer?.key}`} allow="fullscreen;"></iframe>)}
+              .map(trailer => <iframe key={trailer?.id} src={`https://www.youtube.com/embed/${trailer?.key}`} allow="fullscreen;"></iframe>)}
           </div>
         </div>
 

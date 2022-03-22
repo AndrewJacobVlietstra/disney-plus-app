@@ -10,7 +10,7 @@
     padding: 30px;
     width: 600px;
     border-radius: 6px;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     
 
     .settings-user-profiles {
@@ -95,7 +95,7 @@
         background-color: transparent;
         color: #f4f4f4;
         border-bottom: 1px solid rgb(88, 88, 88);
-        margin-top: .5rem;
+        margin-top: .8rem;
         margin-bottom: 2rem;
         padding: 4px 10px;
         height: 40px;
@@ -116,6 +116,10 @@
           background-color: rgba(85, 88, 105, 0.15);
           border-bottom: 1px solid #61DAFB;
         }
+        &::placeholder {
+          font-size: 15px;
+          
+        }
       }
     }
 
@@ -135,6 +139,12 @@
         border-radius: 50%;
         border: 2px solid #f4f4f4;
         cursor: pointer;
+        filter: saturate(.05);
+        transition: all .25s ease;
+
+        &:hover {
+          filter: saturate(1.2);
+        }
       }
     }
   }

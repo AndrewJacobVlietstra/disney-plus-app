@@ -154,6 +154,10 @@
     .trailers-container {
       margin-top: 12vh;
 
+      .trailers-title {
+        padding-top: 1rem;
+      }
+
       .trailers-content {
         margin: 1.5rem 0;
         margin-bottom: 3rem;
@@ -182,6 +186,25 @@
   }
 }
 
+@media only screen and (min-width: 2200px) {
+  .details-container {
+
+    .details-content {
+
+      .details-description-container {
+
+        .details-description {
+          max-width: 640px;
+        }
+      }
+
+      .trailers-container {
+        margin-top: 25vh;
+  
+      }
+    }
+  }
+}
 @media only screen and (max-width: 1366px) {
   .details-container {
 
