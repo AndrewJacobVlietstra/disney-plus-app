@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.styles.scss';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { logUserIn } from '../../redux/User/UserReducer';
+import { logUserIn, } from '../../redux/User/UserReducer';
 
 const Login = () => {
   const navigate = useNavigate();

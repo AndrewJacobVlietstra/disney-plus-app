@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Settings.styles.scss';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { updateUserName, updateUserImage } from '../../redux/User/UserReducer';
+import { updateUserName, updateUserImage, updateLocalStorageUser } from '../../redux/User/UserReducer';
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ const Settings = () => {
 
     if (username.length === 0) return;
     dispatch(updateUserName(username));
+    dispatch(updateLocalStorageUser());
     setUsername('');
   };
 
@@ -47,7 +48,10 @@ const Settings = () => {
         <hr />
         <h4 className='change-image-title'>Change User Image</h4>
         <div className='change-profile-image'>
-          {imageLinks.map(icon => <img key={icon} className='change-image' src={icon} onClick={() => dispatch(updateUserImage(icon))} />)}
+          {imageLinks.map(icon => <img key={icon} className='change-image' src={icon} onClick={() => {
+            dispatch(updateUserImage(icon));
+            return dispatch(updateLocalStorageUser());
+          }} />)}
         </div>
 
       </div>
