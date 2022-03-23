@@ -1,0 +1,57 @@
+.watchlist-page-container {
+  padding: 0 60px;
+
+  .watchlist-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 2rem 0;
+  }
+
+  .watchlist-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    .watchlist-movie-wrapper {
+      position: relative;
+
+      &:hover .remove-watchlist-item{
+        top: 2rem;
+        opacity: 1;
+        visibility: visible;
+      }
+      &:active .remove-watchlist-item{
+        border: 2px solid black;
+      }
+
+      .remove-watchlist-item {
+        position: absolute;
+        top: -1rem;
+        right: 1.4rem;
+
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 50%;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .25s ease;
+
+
+        .remove-watchlist-item-button {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: invert(23%) sepia(67%) saturate(5175%) hue-rotate(351deg) brightness(113%) contrast(100%);
+          transition: all .3s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Detail.styles.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BASE_IMAGE_URL_WIDE, API_KEY } from '../../API/API';
-import { useNavigate } from 'react-router-dom';
+import { addToWatchlist } from '../../redux/User/UserReducer';
 
 const Detail = () => {
   const trailersRef = useRef(null);
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [movieTrailers, setMovieTrailers] = useState([]);
-  const [keywords, setKeywords] = useState([]);
-  const movieState = useSelector(state => state?.movies);
+  const movieState = useSelector(state => state.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
   // console.log(movieData, movieImages);
   
@@ -68,7 +68,7 @@ const Detail = () => {
             <span>Trailer</span>
           </button>
 
-          <button className='add-button controls-button'>
+          <button className='add-button controls-button' title='Add to Watchlist' onClick={() => dispatch(addToWatchlist(movieData))}>
             <span>+</span>
           </button>
 

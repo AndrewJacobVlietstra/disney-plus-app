@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Home from './components/HomePage/Home';
 import Search from './components/SearchPage/Search';
+import Watchlist from './components/WatchlistPage/Watchlist';
 import Detail from './components/Detail/Detail';
 import Settings from './components/SettingsPage/Settings';
 import Showcase from './components/Showcase/Showcase';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/search' element={<Search />} />
           <Route path='/detail:id' element={<Detail />} />
+          <Route path='/watchlist' element={<Watchlist />} />
           <Route path='/showcase' element={<Showcase />} />
           <Route path='/settings' element={<Settings />} />
         </Routes>
