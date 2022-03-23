@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -10,6 +10,9 @@ import Watchlist from './components/WatchlistPage/Watchlist';
 import Detail from './components/Detail/Detail';
 import Settings from './components/SettingsPage/Settings';
 import Showcase from './components/Showcase/Showcase';
+import OriginalsPage from './components/OriginalsPage/OriginalsPage';
+import MoviesPage from './components/MoviesPage/MoviesPage';
+import SeriesPage from './components/SeriesPage/SeriesPage';
 
 function App() {
 
@@ -24,6 +27,9 @@ function App() {
           <Route path='/detail:id' element={<Detail />} />
           <Route path='/watchlist' element={<Watchlist />} />
           <Route path='/showcase' element={<Showcase />} />
+          <Route path='/originals' element={<OriginalsPage />} />
+          <Route path='/movies' element={<MoviesPage />} />
+          <Route path='/series' element={<SeriesPage />} />
           <Route path='/settings' element={<Settings />} />
         </Routes>
         <Header_Mobile />
