@@ -20,23 +20,27 @@
         opacity: 1;
         visibility: visible;
       }
-      &:active .remove-watchlist-item{
-        border: 2px solid black;
-      }
 
       .remove-watchlist-item {
         position: absolute;
         top: -1rem;
         right: 1.4rem;
 
-        width: 50px;
-        height: 50px;
-        border: 2px solid white;
+        width: 2.5vw;
+        height: 2.5vw;
+        border: 2px solid transparent;
         border-radius: 50%;
         z-index: 1;
         opacity: 0;
         visibility: hidden;
         transition: all .25s ease;
+
+        &:hover {
+          border: 2px solid #afafaf;
+        }
+        &:active {
+          border: 2px solid white;
+        }
 
 
         .remove-watchlist-item-button {

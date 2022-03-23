@@ -4,7 +4,7 @@ import './SeriesPage.styles.scss';
 const SeriesPage = () => {
   return (
     <div className='series-page-container'>
-      SeriesPage
+      SeriesPage Component
     </div>
   )
 }
