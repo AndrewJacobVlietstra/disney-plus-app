@@ -1,0 +1,30 @@
+.mobile-nav-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #0a0c13;
+  display: none;
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+
+    .nav-icon {
+      height: 55px;
+    }
+    .user-image {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 1px solid white;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-nav-container {
+    display: block;
+  }
+}

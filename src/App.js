@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
+import Header_Mobile from './components/Header_Mobile/Header_Mobile';
 import Login from './components/Login/Login';
 import Home from './components/HomePage/Home';
 import Search from './components/SearchPage/Search';
@@ -25,6 +26,7 @@ function App() {
           <Route path='/showcase' element={<Showcase />} />
           <Route path='/settings' element={<Settings />} />
         </Routes>
+        <Header_Mobile />
       </Router>
     </div>
   );

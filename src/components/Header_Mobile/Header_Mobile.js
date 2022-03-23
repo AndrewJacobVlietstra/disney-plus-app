@@ -11,20 +11,16 @@ const Header_Mobile = () => {
     <div className='mobile-nav-container'>
       <div className='mobile-nav'>
         <Link to='/home' className='header-menu-link'>
-          <img src='images/home-icon.svg' alt='home-icon'/>
-          <span>Home</span>
+          <img className='nav-icon' src='images/home-icon.svg' alt='home-icon'/>
         </Link>
         <Link to='/search' className='header-menu-link'>
-          <img src='images/search-icon.svg' alt='home-icon'/>
-          <span>Search</span>
+          <img className='nav-icon' src='images/search-icon.svg' alt='search-icon'/>
         </Link>
-        <Link to='/home' className='header-menu-link'>
-          <img src='images/watchlist-icon.svg' alt='home-icon'/>
-          <span>Watchlist</span>
+        <Link to='/watchlist' className='header-menu-link'>
+          <img className='nav-icon' src='images/watchlist-icon.svg' alt='watchlist-icon'/>
         </Link>
-        <Link to='/home' className='header-menu-link'>
-          <img src='images/home-icon.svg' alt='home-icon'/>
-          <span>Account</span>
+        <Link to='/settings' className='header-menu-link'>
+          <img className='user-image' src={user.userImage} alt='account-icon'/>
         </Link>
       </div>
     </div>
