@@ -5,9 +5,8 @@ import { useSelector } from 'react-redux';
 
 const Header_Mobile = () => {
   const user = useSelector(state => state.user);
-  console.log(user);
 
-  return (
+  return user.loggedIn ? (
     <div className='mobile-nav-container'>
       <div className='mobile-nav'>
         <Link to='/home' className='header-menu-link'>
@@ -24,7 +23,7 @@ const Header_Mobile = () => {
         </Link>
       </div>
     </div>
-  )
+  ) : null
 }
 
 export default Header_Mobile;

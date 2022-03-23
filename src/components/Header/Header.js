@@ -12,7 +12,7 @@ const Header = () => {
   const [toggleLogout, setToggleLogout] = useState(false);
 
   return (
-    <nav className={`header-container ${user.loggedIn ? '' : 'justify-space-between'}`}>
+    <nav className={`header-container ${user.loggedIn ? 'justify-center' : 'justify-space-between'}`}>
       <img className='header-logo' src='images/logo.svg'  alt='disney-logo' />
 
       {user.loggedIn ? (<div className='header-menu'>

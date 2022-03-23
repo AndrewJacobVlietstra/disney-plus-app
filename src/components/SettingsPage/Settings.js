@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Settings.styles.scss';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { updateUserName, updateUserImage, updateLocalStorageUser } from '../../redux/User/UserReducer';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logUserOut, updateUserName, updateUserImage, updateLocalStorageUser } from '../../redux/User/UserReducer';
 
 const Settings = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
   const [username, setUsername] = useState('');
@@ -52,6 +53,15 @@ const Settings = () => {
             dispatch(updateUserImage(icon));
             return dispatch(updateLocalStorageUser());
           }} />)}
+        </div>
+
+        <hr />
+        <h4 className='logout-title'>Log Out</h4>
+        <div className='logout-container'>
+          <button className='logout-button' onClick={() => {
+            dispatch(logUserOut());
+            return navigate('/');
+          }}>Log out</button>
         </div>
 
       </div>

@@ -131,10 +131,12 @@
 .justify-space-between {
   justify-content: space-between;
 }
+.justify-center {
+  justify-content: center;
+}
 
 @media only screen and (max-width: 768px) {
   .header-container {
-    justify-content: center;
 
     .header-logo {
       width: 90px;
