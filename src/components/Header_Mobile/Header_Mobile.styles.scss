@@ -14,6 +14,7 @@
     .nav-icon {
       height: 55px;
       filter: brightness(.35);
+      transition: all .25s ease;
     }
     .user-image {
       width: 55px;
@@ -21,13 +22,14 @@
       border-radius: 50%;
       border: 1px solid white;
       filter: brightness(.5);
+      transition: all .25s ease;
     }
   }
 }
 
 .normal-brightness {filter: brightness(1) !important;}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
   .mobile-nav-container {
     display: block;
   }
