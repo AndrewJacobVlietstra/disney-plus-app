@@ -15,11 +15,11 @@ const Watchlist = () => {
       <h2 className='watchlist-title'>{watchlist.length > 0 ? 'Your Watchlist' : 'Your Watchlist Is Empty!'}</h2>
       <div className='watchlist-content'>
         {watchlist.map(item => (
-          <div className='watchlist-movie-wrapper'>
+          <div className='watchlist-movie-wrapper' key={item.id}>
             <div className='remove-watchlist-item' onClick={() => dispatch(removeFromWatchlist(item))}>
               <img className='remove-watchlist-item-button' src='images/clear-search.png' />
             </div>
-            <Movie_TV_Result key={item.id} movie={item} src={`${BASE_IMAGE_URL_WIDE}${item.poster_path}`} />
+            <Movie_TV_Result movie={item} src={`${BASE_IMAGE_URL_WIDE}${item.poster_path}`} />
           </div>
         ))}
       </div>
