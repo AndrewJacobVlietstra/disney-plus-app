@@ -20,7 +20,7 @@ const Showcase = () => {
   if (currentShowcase === 'star') {companyID = '25'; imageSrc = 'images/viewers-star.png'; videoSrc = 'videos/fox-intro.mp4';}
   
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?${API_KEY}language=en-US&sort_by=popularity.desc&include_adult=false&page=1&with_companies=${companyID}${genres}`)
+    fetch(`https://api.themoviedb.org/3/discover/movie?${API_KEY}language=en-US&sort_by=popularity.desc&include_adult=false&vote_average.gte=6&page=1&with_companies=${companyID}${genres}`)
       .then(res => res.json())
       .then(data => setShowCaseMovies(data?.results))
       .catch(err => console.error(err));

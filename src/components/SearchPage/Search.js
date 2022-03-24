@@ -19,8 +19,8 @@ const Search = () => {
     await fetch(query)
       .then(res => res.json())
       .then(data => {
-        setResults(data?.results.filter((el, i) => el?.media_type !== "person"));
-        localStorage.setItem('searchResults', JSON.stringify(data?.results.filter((el, i) => el?.media_type !== "person")));
+        setResults(data?.results.filter((el, i) => el?.media_type !== "person").filter((el, i) => el?.backdrop_path !== null));
+        localStorage.setItem('searchResults', JSON.stringify(data?.results.filter((el, i) => el?.media_type !== "person").filter((el, i) => el?.backdrop_path !== null)));
         return data;
       })
       .catch(err => console.error(err));
