@@ -10,7 +10,7 @@ const Movie_TV_Result = ({ movie }) => {
   const navigate = useNavigate();
 
   const movieTVClickHandler = async () => {
-    let tvOrMovie = await movie?.media_type === 'tv' ? 'tv' : 'movie';
+    let tvOrMovie = await movie?.original_name ? 'tv' : 'movie';
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movie?.id}?${API_KEY}`)
       .then(res => res.json())
       .then(data => dispatch(displayMovieData(data)))

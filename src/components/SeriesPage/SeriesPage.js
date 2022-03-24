@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './SeriesPage.styles.scss';
+import { API_KEY } from '../../API/API';
+import Series from '../Series/Series';
 
 const SeriesPage = () => {
+  const [results, setResults] = useState([]);
+  const query = `https://api.themoviedb.org/3/discover/tv?${API_KEY}sort_by=popularity.desc&page=1&with_original_language=en`;
+
+  useEffect(() => {
+    fetch(query)
+      .then(res => res.json())
+      .then(data => setResults(data.results))
+      .catch(err => console.error(err));
+  }, [])
+  
+  console.log(results);
   return (
     <div className='series-page-container'>
-      SeriesPage Component
+      <h2 className='series-title'>Popular Series</h2>
+      <div className='series-content-wrapper'>
+        {results?.map(item => <Series key={item.id} movie={item} />)}
+      </div>
     </div>
   )
 }

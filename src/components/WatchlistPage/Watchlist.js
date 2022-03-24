@@ -9,6 +9,7 @@ import { removeFromWatchlist } from '../../redux/User/UserReducer';
 const Watchlist = () => {
   const { watchlist } = useSelector(state => state.user);
   const dispatch = useDispatch();
+  // console.log(watchlist);
 
   return (
     <div className='watchlist-page-container'>

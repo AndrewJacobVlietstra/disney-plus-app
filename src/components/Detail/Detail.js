@@ -16,7 +16,7 @@ const Detail = () => {
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
   let logoPath = `${BASE_IMAGE_URL_WIDE + firstEnglishLogo?.file_path}`;
-  if (firstEnglishLogo === undefined) logoPath = 'images/disney-plus-logo.png';
+  if (firstEnglishLogo?.file_path == undefined) logoPath = 'images/disney-plus-logo.png';
   
   // Calculate movie runtime
   const convertedMovieRunTime = (inputTime) => {
@@ -32,7 +32,7 @@ const Detail = () => {
   });
   
   // Fetch trailers for specific movie or tv show
-  let tvOrMovie = movieData?.number_of_episodes ? 'tv' : 'movie';
+  let tvOrMovie = movieData?.original_name ? 'tv' : 'movie';
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)

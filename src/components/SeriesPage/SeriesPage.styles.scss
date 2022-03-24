@@ -1,0 +1,17 @@
+.series-page-container {
+  padding: 0 40px;
+  margin-bottom: 2rem;
+
+  .series-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin: 2rem 0;
+  }
+
+  .series-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-gap: 2rem;
+  }
+}
