@@ -287,3 +287,74 @@
     }
   }
 }
+@media only screen and (max-width: 1024px) {
+  .details-container {
+
+    .details-content {
+
+
+      .details-image-title-container {
+
+        .details-image-title {
+          width: 300px;
+        }
+      }
+
+      .controls-container {
+    
+        .controls-button {
+          padding: 0 14px;
+          margin-right: 22px;
+          font-size: 12px;
+        }
+    
+        .play-button {
+          height: 46px;
+        }
+    
+        .trailer-button {
+          height: 46px;
+        }
+    
+        .add-button,
+        .group-watch-button {
+          width: 40px;
+          height: 40px;
+    
+          span {
+            font-size: 26px;
+          }
+
+          img {
+            width: 34px;
+          }
+        }
+      }
+
+      .details-description-container {
+
+        .details-description {
+          font-size: 1.65vw;
+          max-width: 520px;
+        }
+      }
+
+      .trailers-container {
+        margin-top: 20vh;
+  
+
+        .trailers-content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-gap: 2rem;
+  
+          iframe {
+            display: block;
+            border: none;
+            width: 44vw;
+            height: 18.6vh;
+          }
+        }
+      }
+    }
+  }
+}

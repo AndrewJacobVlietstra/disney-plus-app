@@ -64,3 +64,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .viewers-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

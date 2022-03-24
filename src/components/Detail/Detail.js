@@ -11,7 +11,7 @@ const Detail = () => {
   const [movieTrailers, setMovieTrailers] = useState([]);
   const movieState = useSelector(state => state.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
-  // console.log(movieData, movieImages);
+  console.log(movieData, movieImages);
   
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
@@ -33,6 +33,10 @@ const Detail = () => {
   
   // Fetch trailers for specific movie or tv show
   let tvOrMovie = movieData?.original_name ? 'tv' : 'movie';
+
+  // If screen size is iPad Pro or smaller, use poster as BG, instead of backdrop
+  const windowWidth = window.innerWidth;
+  const bgImage = windowWidth > 1024 ? `${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}` : `${BASE_IMAGE_URL_WIDE}${movieImages?.posters?.[0]?.file_path}`
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)
@@ -46,7 +50,7 @@ const Detail = () => {
     <div className='details-container'>
 
       <div className='details-background-container'>
-        <img className='details-background-image' src={`${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}`} />
+        <img className='details-background-image' src={bgImage} />
       </div>
 
       <div className='details-content'>
