@@ -1,6 +1,6 @@
 .search-page-container {
   min-height: calc(100vh - 70px); // 70px is height of the header
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 
   &:before {
     content: "";
@@ -68,8 +68,36 @@
 @media only screen and (max-width: 1366px) {
   .search-page-container {
 
+    .search-form {
+      position: relative;
+  
+      .search-input {
+        font-size: 30px;
+  
+        &::placeholder {
+          color: #f4f4f4;
+          letter-spacing: 1px;
+        }
+      }
+  
+      .clear-search-button {
+        top: 1.5rem;
+        right: 1rem;
+        width: 33px;
+      }
+    }
+
     .search-results-container {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-page-container {
+
+    .search-results-container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }

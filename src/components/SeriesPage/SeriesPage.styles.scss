@@ -15,3 +15,12 @@
     grid-gap: 2rem;
   }
 }
+
+@media only screen and (max-width: 1366px) {
+  .series-page-container {
+
+    .series-content-wrapper {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}

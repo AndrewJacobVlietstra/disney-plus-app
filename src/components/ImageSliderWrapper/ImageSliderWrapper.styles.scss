@@ -37,3 +37,12 @@
     left: 2rem;
   }
 }
+
+@media only screen and (min-width: 2200px) {
+  .image-wrapper {
+
+    .image-wrapper-info {
+      width: 18vw;
+    }
+  }
+}

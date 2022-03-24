@@ -59,3 +59,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .watchlist-page-container {
+  
+    .watchlist-content {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      .watchlist-movie-wrapper {
+
+        .remove-watchlist-item {
+          top: -1rem;
+          right: 1.4rem;
+    
+          width: 3.4vw;
+          height: 3.4vw;
+        }
+      }
+    }
+
+    
+  }
+}

@@ -62,10 +62,27 @@
     .movie-info-container {
 
       .movie-title {
-        font-size: 1.25vw;
+        font-size: 1.4vw;
       }
       .movie-overview {
-        font-size: .9vw;
+        font-size: .94vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .movie_tv-wrapper {
+
+    .movie-info-container {
+      padding: 15px;
+
+      .movie-title {
+        font-size: 1.6vw;
+      }
+      .movie-overview {
+        font-size: 1.3vw;
+        line-height: 1.5;
       }
     }
   }
