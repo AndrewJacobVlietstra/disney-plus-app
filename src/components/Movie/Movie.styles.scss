@@ -5,6 +5,10 @@
     filter: brightness(.21);
   }
 
+  .movie-image {
+    transition: all .25s ease;
+  }
+
   .movie-info-container {
     position: absolute;
     display: flex;
@@ -29,7 +33,6 @@
     .movie-overview {
       font-size: .75vw;
       letter-spacing: .5px;
-      line-height: 1.5;
     }
   }
 
