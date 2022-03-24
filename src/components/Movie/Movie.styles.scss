@@ -1,4 +1,3 @@
-
 .movie-wrapper {
   position: relative;
 
@@ -37,5 +36,21 @@
   &:hover .movie-info-container {
     top: 0%;
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .movie-wrapper {
+
+    .movie-info-container {
+
+      .movie-title {
+        font-size: 1.4vw;
+      }
+
+      .movie-overview {
+        font-size: .94vw;
+      }
+    }
   }
 }

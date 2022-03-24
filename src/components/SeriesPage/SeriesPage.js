@@ -5,7 +5,8 @@ import Series from '../Series/Series';
 
 const SeriesPage = () => {
   const [results, setResults] = useState([]);
-  const query = `https://api.themoviedb.org/3/discover/tv?${API_KEY}sort_by=popularity.desc&page=1&with_original_language=en&vote_average.gte=8`;
+  const lastYear = new Date().getFullYear() - 1;
+  const query = `https://api.themoviedb.org/3/discover/tv?${API_KEY}sort_by=popularity.desc&page=1&with_original_language=en&vote_average.gte=7.6&air_date.gte=${lastYear}`;
 
   useEffect(() => {
     fetch(query)
