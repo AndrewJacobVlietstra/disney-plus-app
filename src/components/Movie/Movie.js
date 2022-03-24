@@ -27,7 +27,7 @@ const Movie = ({ movie, backdrop }) => {
     }}>
       <img className="movie-image" src={`${BASE_IMAGE_URL}${backdrop ? movie?.backdrop_path : movie?.poster_path}`} />
       <div className="movie-info-container">
-        <h4 className="movie-title">{movie?.original_title}</h4>
+        <h4 className="movie-title">{movie?.title}</h4>
         <p className="movie-overview">{movie?.overview.length > 280 ? `${movie?.overview?.substring(0, 280)}...` : movie.overview}</p>
       </div>
     </div>

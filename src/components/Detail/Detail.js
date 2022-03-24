@@ -11,7 +11,7 @@ const Detail = () => {
   const [movieTrailers, setMovieTrailers] = useState([]);
   const movieState = useSelector(state => state.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
-  // console.log(movieData, movieImages);
+  console.log(movieData, movieImages);
   
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');

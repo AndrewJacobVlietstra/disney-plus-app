@@ -3,7 +3,7 @@
   position: relative;
 
   &:hover .movie-image {
-    opacity: .25;
+    filter: brightness(.21);
   }
 
   .movie-info-container {

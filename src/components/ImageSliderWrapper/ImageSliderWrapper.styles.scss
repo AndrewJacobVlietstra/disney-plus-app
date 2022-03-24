@@ -42,7 +42,23 @@
   .image-wrapper {
 
     .image-wrapper-info {
-      width: 18vw;
+      width: 20vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .image-wrapper {
+
+    .image-wrapper-info {
+      
+      .image-wrapper-title {
+        font-size: 1.15vw;
+      }
+  
+      .image-wrapper-overview {
+        font-size: .875vw;
+      }
     }
   }
 }
