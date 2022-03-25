@@ -48,11 +48,59 @@
     .movie-info-container {
 
       .movie-title {
-        font-size: 1.4vw;
+        font-size: 1.1vw;
       }
 
       .movie-overview {
-        font-size: .94vw;
+        font-size: .75vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .movie-wrapper {
+
+    .movie-info-container {
+
+      .movie-title {
+        font-size: 1vw;
+      }
+
+      .movie-overview {
+        font-size: .75vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .movie-wrapper {
+
+    .movie-info-container {
+
+      .movie-title {
+        font-size: 1.65vw;
+      }
+
+      .movie-overview {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .movie-wrapper {
+
+    .movie-info-container {
+
+      .movie-title {
+        font-size: 3.5vw;
+      }
+
+      .movie-overview {
+        font-size: 2.8vw;
       }
     }
   }

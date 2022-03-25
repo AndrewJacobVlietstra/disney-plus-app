@@ -86,3 +86,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .image-slider-container {
+    
+    .image-wrapper {
+      height: 300px;
+
+      .image-slider-image {
+        object-position: 50% 40%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .image-slider-container {
+    
+    .image-wrapper {
+      height: 200px;
+    }
+  }
+}

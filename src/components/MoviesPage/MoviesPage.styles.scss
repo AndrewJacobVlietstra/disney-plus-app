@@ -57,6 +57,22 @@
 
     .movies-content-wrapper {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      .movie-wrapper {
+
+
+        .movie-info-container {
+
+
+          .movie-title {
+            font-size: 1.55vw;
+          }
+    
+          .movie-overview {
+            font-size: 1vw;
+          }
+        }
+      }
     }
   }
 }

@@ -180,6 +180,17 @@
 
     .settings-content {
       margin-bottom: 8rem;
+      width: 500px;
+      
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .settings-page-container {
+
+    .settings-content {
+      width: 380px;
       
     }
   }

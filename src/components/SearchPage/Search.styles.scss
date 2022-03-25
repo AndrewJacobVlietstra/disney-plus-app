@@ -69,7 +69,6 @@
   .search-page-container {
 
     .search-form {
-      position: relative;
   
       .search-input {
         font-size: 30px;
@@ -93,11 +92,40 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .search-page-container {
 
     .search-results-container {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .search-page-container {
+    padding-bottom: 7rem;
+
+    .search-form {
+  
+      .search-input {
+        font-size: 18px;
+        height: 50px;
+  
+        &::placeholder {
+          color: #f4f4f4;
+          letter-spacing: 1px;
+        }
+      }
+  
+      .clear-search-button {
+        top: .92rem;
+        right: 1rem;
+        width: 22px;
+      }
+    }
+
+    .search-results-container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }

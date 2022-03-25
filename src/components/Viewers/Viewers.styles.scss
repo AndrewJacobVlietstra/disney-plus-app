@@ -70,3 +70,9 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .viewers-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
