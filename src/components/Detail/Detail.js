@@ -17,6 +17,10 @@ const Detail = () => {
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
   let logoPath = `${BASE_IMAGE_URL_WIDE + firstEnglishLogo?.file_path}`;
   if (firstEnglishLogo?.file_path == undefined) logoPath = 'images/disney-plus-logo.png';
+
+  // Grab the first English Poster
+  let firstEnglishPoster = movieImages?.posters?.find(poster => poster?.iso_639_1 === 'en');
+  let posterPath = `${BASE_IMAGE_URL_WIDE + firstEnglishPoster?.file_path}`;
   
   // Calculate movie runtime
   const convertedMovieRunTime = (inputTime) => {
@@ -36,7 +40,7 @@ const Detail = () => {
 
   // If screen size is iPad Pro or smaller, use poster as BG, instead of backdrop
   const windowWidth = window.innerWidth;
-  const bgImage = windowWidth > 1024 ? `${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}` : `${BASE_IMAGE_URL_WIDE}${movieImages?.posters?.[0]?.file_path}`
+  const bgImage = windowWidth > 1024 ? `${BASE_IMAGE_URL_WIDE}${movieImages?.backdrops?.[0]?.file_path}` : posterPath;
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)

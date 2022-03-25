@@ -290,6 +290,7 @@
 @media only screen and (max-width: 1024px) {
   .details-container {
 
+
     .details-content {
 
 
@@ -328,9 +329,22 @@
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  .details-container {
+
+    .details-background-container {
+      bottom: 69px;
+    }
+  }
+}
 
 @media only screen and (max-width: 550px) {
   .details-container {
+
+
+    .details-background-container {
+      bottom: 59px;
+    }
 
     .details-content {
 
@@ -350,7 +364,7 @@
       .controls-container {
     
         .controls-button {
-          padding: 0 5px;
+          padding: 0 6px;
           margin-right: 22px;
           font-size: 11px;
         }
@@ -360,7 +374,7 @@
           height: 36px;
 
           img {
-            width: 26px;
+            width: 24px;
           }
         }
     
@@ -376,6 +390,14 @@
           img {
             width: 28px;
           }
+        }
+      }
+
+      .details-subtitle-container {
+  
+  
+        .details-subtitle {
+          font-size: 12px;
         }
       }
 
