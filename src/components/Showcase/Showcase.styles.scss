@@ -93,3 +93,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .showcase-page-container {
+
+  .disneyBG {top: 70px;}
+
+  .pixarBG {top: 70px;}
+
+  .marvelBG {top: 4.4rem;}
+
+  .starwarsBG {top: 2rem;}
+
+  .nationalBG {top: 70px;}
+
+  .foxBG {top: 2.5rem;}
+
+    .showcase-movies {
+      margin-top: 30vh;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
