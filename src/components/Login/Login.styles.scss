@@ -90,3 +90,26 @@
     }
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .login-page-container {
+
+    .login-content-cta {
+      margin-bottom: 100px;
+      transform: scale(.95);
+
+      .sign-up {
+
+        button {
+          width: 100%;
+          font-size: 16px;
+          padding: 15px 0;
+        }
+  
+        .sign-up-description {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
