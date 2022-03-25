@@ -4,7 +4,7 @@ import './OriginalsPage.styles.scss';
 const OriginalsPage = () => {
   return (
     <div className='originals-page-container'>
-      OriginalsPage
+      <h2 className='originals-page-title'>Originals Page</h2>
     </div>
   )
 }

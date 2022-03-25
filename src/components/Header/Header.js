@@ -28,10 +28,10 @@ const Header = () => {
           <img src='images/watchlist-icon.svg' alt='watchlist-icon'/>
           <span>watchlist</span>
         </Link>
-        <Link to='/originals' className='header-menu-link'>
+        <a className='header-menu-link'>
           <img src='images/original-icon.svg' alt='originals-icon'/>
           <span>originals</span>
-        </Link>
+        </a>
         <Link to='/movies' className='header-menu-link'>
           <img src='images/movie-icon.svg' alt='movie-icon'/>
           <span>movies</span>
