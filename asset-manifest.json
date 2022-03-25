@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/disney-plus-app/static/css/main.56db81d2.css",
-    "main.js": "/disney-plus-app/static/js/main.ef607f3a.js",
+    "main.css": "/disney-plus-app/static/css/main.f3b942d9.css",
+    "main.js": "/disney-plus-app/static/js/main.b90fec20.js",
     "static/media/login-background.jpg": "/disney-plus-app/static/media/login-background.05b1a1b3088cbb458939.jpg",
     "static/media/home-background.png": "/disney-plus-app/static/media/home-background.a0c4bdd961442f1bc8b1.png",
     "static/media/slick.svg": "/disney-plus-app/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -9,11 +9,11 @@
     "static/media/slick.ttf": "/disney-plus-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/disney-plus-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/disney-plus-app/index.html",
-    "main.56db81d2.css.map": "/disney-plus-app/static/css/main.56db81d2.css.map",
-    "main.ef607f3a.js.map": "/disney-plus-app/static/js/main.ef607f3a.js.map"
+    "main.f3b942d9.css.map": "/disney-plus-app/static/css/main.f3b942d9.css.map",
+    "main.b90fec20.js.map": "/disney-plus-app/static/js/main.b90fec20.js.map"
   },
   "entrypoints": [
-    "static/css/main.56db81d2.css",
-    "static/js/main.ef607f3a.js"
+    "static/css/main.f3b942d9.css",
+    "static/js/main.b90fec20.js"
   ]
 }
