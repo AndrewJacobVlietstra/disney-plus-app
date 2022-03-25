@@ -11,6 +11,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+    transition: all .25s ease;
     
     .details-background-image {
       width: 100%;
@@ -19,6 +20,7 @@
       object-position: center;
       opacity: 0;
       transform: scale(2);
+      transition: all .25s ease;
       animation: fade 4s ease .2s 1 forwards;
     }
 
@@ -80,6 +82,7 @@
         height: 56px;
         background-color: #f9f9f9;
         letter-spacing: 1.8px;
+        color: #111;
   
         &:hover {
           background-color: #c6c6c6;

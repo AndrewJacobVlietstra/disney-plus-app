@@ -30,7 +30,7 @@ const Showcase = () => {
   return (
     <div className='showcase-page-container'>
       <div className={`showcase-bg ${videoClass}`}>
-        <video className='bg-video' autoPlay muted loop>
+        <video className='bg-video' autoPlay muted loop playsInline>
           <source src={videoSrc} />
         </video>
       </div>
