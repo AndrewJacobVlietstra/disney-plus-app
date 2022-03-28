@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/disney-plus-app/static/css/main.1d6b9a6a.css",
-    "main.js": "/disney-plus-app/static/js/main.b90fec20.js",
+    "main.js": "/disney-plus-app/static/js/main.599cd6e2.js",
     "static/media/login-background.jpg": "/disney-plus-app/static/media/login-background.05b1a1b3088cbb458939.jpg",
     "static/media/home-background.png": "/disney-plus-app/static/media/home-background.a0c4bdd961442f1bc8b1.png",
     "static/media/slick.svg": "/disney-plus-app/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -10,10 +10,10 @@
     "static/media/slick.woff": "/disney-plus-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/disney-plus-app/index.html",
     "main.1d6b9a6a.css.map": "/disney-plus-app/static/css/main.1d6b9a6a.css.map",
-    "main.b90fec20.js.map": "/disney-plus-app/static/js/main.b90fec20.js.map"
+    "main.599cd6e2.js.map": "/disney-plus-app/static/js/main.599cd6e2.js.map"
   },
   "entrypoints": [
     "static/css/main.1d6b9a6a.css",
-    "static/js/main.b90fec20.js"
+    "static/js/main.599cd6e2.js"
   ]
 }
