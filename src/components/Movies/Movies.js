@@ -3,7 +3,7 @@ import './Movies.styles.scss';
 import Movie from '../Movie/Movie';
 import { useSelector, useDispatch } from 'react-redux';
 import { popularMovies } from '../../redux/Movies/MoviesReducer';
-import { API_KEY, BASE_URL, MOVIES, BY_POPULARITY, } from '../../API/API';
+import { API_KEY, BASE_URL, MOVIES, BY_POPULARITY, WITHOUT_COMPANIES, } from '../../API/API';
 import { fetchFunction } from '../../API/fetchFunction';
 
 const Movies = () => {
@@ -12,7 +12,7 @@ const Movies = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    fetchFunction(`${BASE_URL}${MOVIES}${API_KEY}${BY_POPULARITY}${PAGE}`, dispatch, popularMovies);
+    fetchFunction(`${BASE_URL}${MOVIES}${API_KEY}${BY_POPULARITY}${PAGE}${WITHOUT_COMPANIES}`, dispatch, popularMovies);
   }, []);
   
   const popularMoviesSelector = useSelector(state => state?.movies?.popularMovies);
