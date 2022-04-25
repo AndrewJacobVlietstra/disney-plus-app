@@ -6,4 +6,4 @@ export const MOVIES = '/discover/movie?';
 export const BY_POPULARITY = '?sort_by=popularity.desc';
 export const TV_BY_POPULARITY = '/discover/tv?sort_by=popularity.desc&';
 export const API_KEY = 'api_key=68865561608bbf858af399d1f7785475&';
-export const WITHOUT_COMPANIES = '&without_companies=28792,6329,955'; // exclude Pil's Adventure, has horrible looking backdrop, very blurry, also exclude jackass Forever
+export const WITHOUT_COMPANIES = '&without_companies=28792,6329,955,1311'; // exclude Pil's Adventure, has horrible looking backdrop, very blurry, also exclude jackass Forever
