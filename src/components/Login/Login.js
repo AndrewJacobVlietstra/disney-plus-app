@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Login.styles.scss';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, } from 'react-redux';
 import { logUserIn, updateLocalStorageUser } from '../../redux/User/UserReducer';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // On page load push user to home page if they were loggedIn previously
+  useEffect(() => {
+    const currentLocalStorageUser = JSON.parse(localStorage.getItem('currentDisneyCloneUser'));
+
+    if (currentLocalStorageUser === null || currentLocalStorageUser === undefined) {
+      return;
+    }
+
+    if (currentLocalStorageUser.loggedIn === true) {
+      navigate('/home');
+    }
+  }, []);
+
   
   return (
     <div className='login-page-container'>
