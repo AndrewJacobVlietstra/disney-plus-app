@@ -3,7 +3,7 @@ import './Header.styles.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logUserIn, logUserOut, } from '../../redux/User/UserReducer';
+import { logUserIn, logUserOut, updateLocalStorageUser, } from '../../redux/User/UserReducer';
 
 const Header = () => {
   const navigate = useNavigate(); // navigate between pages
@@ -47,14 +47,21 @@ const Header = () => {
           <img className="header-user-image" src={user.userImage} />
         </div>
       ) : (
-        <button className="login-button" onClick={() => {dispatch(logUserIn()); return navigate('/home');}}>Login</button>
+        <button className="login-button" onClick={() => {dispatch(logUserIn()); dispatch(updateLocalStorageUser()); return navigate('/home');}}>Login</button>
       )}
 
       {toggleLogout ? (
       <div className='logout-modal'>
         <h4>{user.userName}</h4>
         <button className='modal-button' onClick={() => {navigate('/settings'); return setToggleLogout(!toggleLogout)}}>Settings</button>
-        <button className='modal-button' onClick={() => {dispatch(logUserOut()); navigate('/'); return setToggleLogout(!toggleLogout)}}>Log Out</button>
+        <button className='modal-button' onClick={() => {
+          dispatch(logUserOut()); 
+          navigate('/'); 
+          dispatch(updateLocalStorageUser());
+          return setToggleLogout(!toggleLogout)}}
+        >
+          Log Out
+        </button>
       </div>
       ) : null}
     </nav>

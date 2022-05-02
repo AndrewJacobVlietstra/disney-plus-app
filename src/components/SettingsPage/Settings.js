@@ -60,6 +60,7 @@ const Settings = () => {
         <div className='logout-container'>
           <button className='logout-button' onClick={() => {
             dispatch(logUserOut());
+            dispatch(updateLocalStorageUser());
             return navigate('/');
           }}>Log out</button>
         </div>

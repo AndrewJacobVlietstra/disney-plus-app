@@ -5,10 +5,13 @@ export const userSlice = createSlice({
   initialState: { userName: `Guest#${Math.floor(Math.random() * 1000)}`, userImage: 'images/astronaut.png', watchlist: [], loggedIn: false },
   reducers: {
     logUserIn: (state, action) => {
-      if (localStorage.getItem('currentDisneyCloneUser') === null) return {...state, loggedIn: true};
+      if (localStorage.getItem('currentDisneyCloneUser') === null) {
+        localStorage.setItem('currentDisneyCloneUser', JSON.stringify({...state, loggedIn: true}));
+        return {...state, loggedIn: true}
+      }
 
-      const { userName, userImage } = JSON.parse(localStorage.getItem('currentDisneyCloneUser'));
-      return {...state, userName, userImage, loggedIn: true};
+      const { userName, userImage, watchlist } = JSON.parse(localStorage.getItem('currentDisneyCloneUser'));
+      return {...state, userName, userImage, watchlist, loggedIn: true};
     },
     logUserOut: (state, action) => {
       return {...state, loggedIn: false};
@@ -20,8 +23,8 @@ export const userSlice = createSlice({
       return {...state, userImage: action.payload};
     },
     updateLocalStorageUser: (state, action) => {
-      const { userName, userImage } = state;
-      return localStorage.setItem('currentDisneyCloneUser', JSON.stringify({userName, userImage}));
+      const { loggedIn, userName, watchlist, userImage } = state;
+      return localStorage.setItem('currentDisneyCloneUser', JSON.stringify({ userName, userImage, watchlist, loggedIn,}));
     },
     addToWatchlist: (state, action) => {
       const existingItem = state.watchlist.find(item => item.id === action.payload.id);

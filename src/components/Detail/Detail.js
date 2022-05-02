@@ -1,17 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Detail.styles.scss';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { BASE_IMAGE_URL_WIDE, API_KEY } from '../../API/API';
-import { addToWatchlist } from '../../redux/User/UserReducer';
+import { addToWatchlist, updateLocalStorageUser } from '../../redux/User/UserReducer';
 
 const Detail = () => {
   const trailersRef = useRef(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [movieTrailers, setMovieTrailers] = useState([]);
   const movieState = useSelector(state => state.movies);
   const { displayMovieData: movieData, displayMovieImages: movieImages } = movieState;
   // console.log(movieData, movieImages);
+
   
   // Grab the first English logo, if no logo is available then use disney+ logo
   let firstEnglishLogo = movieImages?.logos?.find(logo => logo?.iso_639_1 === 'en');
@@ -24,6 +27,11 @@ const Detail = () => {
   
   // Calculate movie runtime
   const convertedMovieRunTime = (inputTime) => {
+    
+    if (inputTime === undefined || inputTime === null) {
+      return;
+    }
+
     let hours = Math.floor(inputTime / 60);
     let minutes = inputTime % 60;
     return `${hours}h ${minutes}m`;
@@ -44,9 +52,9 @@ const Detail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch(`https://api.themoviedb.org/3/${tvOrMovie}/${movieData?.id}/videos?${API_KEY}language=en-US`)
-      .then(res => res.json())
-      .then(data => setMovieTrailers(data?.results?.reverse()))
-      .catch(err => console.error(err));
+    .then(res => res.json())
+    .then(data => setMovieTrailers(data?.results?.reverse()))
+    .catch(err => console.error(err));
   }, [movieData?.id]);
 
 
@@ -72,11 +80,14 @@ const Detail = () => {
           </button>
 
           <button className='trailer-button controls-button' onClick={() => trailersRef.current.scrollIntoView()}>
-            <img src='images/play-icon-white.png' />
+            {/* <img src='images/play-icon-white.png' /> */}
             <span>Trailer</span>
           </button>
 
-          <button className='add-button controls-button' title='Add to Watchlist' onClick={() => dispatch(addToWatchlist(movieData))}>
+          <button className='add-button controls-button' title='Add to Watchlist' onClick={() => {
+            dispatch(addToWatchlist(movieData));
+            return dispatch(updateLocalStorageUser());
+          }}>
             <span>+</span>
           </button>
 
