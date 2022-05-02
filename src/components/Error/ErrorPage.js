@@ -10,8 +10,8 @@ const ErrorPage = () => {
   return (
     <div className='error-page-container'>
       <p className='error-page-message'>
-        Error, the path <span className='error-page-path'>{currentPath}</span> does not exist. <br />
-        Please head back.
+        404 Error, the path <span className='error-page-path'>{currentPath}</span> does not exist. <br />
+        Please head back to site.
       </p>
     </div>
   )

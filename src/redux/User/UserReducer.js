@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
   name: "User",
-  initialState: { userName: `Guest#${Math.floor(Math.random() * 1000)}`, userImage: 'images/astronaut.png', watchlist: [], loggedIn: false },
+  initialState: { userName: `Guest#${Math.floor(Math.random() * 200)}`, userImage: 'images/astronaut.png', watchlist: [], loggedIn: false },
   reducers: {
     logUserIn: (state, action) => {
       if (localStorage.getItem('currentDisneyCloneUser') === null) {

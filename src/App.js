@@ -20,9 +20,12 @@ import ErrorPage from './components/Error/ErrorPage';
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userState = useSelector(state => state.user);
+  // const userState = useSelector(state => state.user);
   
   useEffect(() => {
+    if (localStorage.getItem('currentDisneyCloneUser') === null || localStorage.getItem('currentDisneyCloneUser') === undefined) {
+      return navigate('/');
+    }
     const userLocalStorageData = JSON.parse(localStorage.getItem('currentDisneyCloneUser'));
 
     // If user is logged in then keep them logged in on page refresh
