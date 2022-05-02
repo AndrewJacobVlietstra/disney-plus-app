@@ -15,6 +15,7 @@ import Showcase from './components/Showcase/Showcase';
 import OriginalsPage from './components/OriginalsPage/OriginalsPage';
 import MoviesPage from './components/MoviesPage/MoviesPage';
 import SeriesPage from './components/SeriesPage/SeriesPage';
+import ErrorPage from './components/Error/ErrorPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ function App() {
         <Route path='/movies' element={<MoviesPage />} />
         <Route path='/series' element={<SeriesPage />} />
         <Route path='/settings' element={<Settings />} />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
       <Header_Mobile />
     </div>
